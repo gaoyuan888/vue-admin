@@ -3,3 +3,21 @@ npm-debug.log
 .editorconfig
 dist/
 node_modules/
+*.iml
+.idea/
+*/target
+.project
+.metadata/
+*.class
+*.war
+*.swp
+*/buildNumber.properties
+buildNumber.properties
+config_center_client.log
+MANIFEST.MF
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+out
+gen
