@@ -4,11 +4,11 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../vue-admin/index.html'),
-    assetsRoot: path.resolve(__dirname, '../vue-admin/'),
+    index: path.resolve(__dirname, '../dist/index.html'),
+    assetsRoot: path.resolve(__dirname, '../dist/'),
     assetsSubDirectory: 'static',
     // assetsPublicPath: '/vue-admin/',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/vue-admin/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
