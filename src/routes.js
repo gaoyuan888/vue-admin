@@ -40,7 +40,7 @@ let routes = [
             {path: '/page4', component: Page4, name: '页面4'},
             {path: '/page5', component: Page5, name: '页面5'}
         ],
-        hidden: false,
+        hidden: true,
     },
     {
         path: '/',
@@ -51,7 +51,7 @@ let routes = [
         children: [
             {path: '/page6', component: Page6, name: '健康城市'}
         ],
-        hidden: false
+        hidden: true
     },
     {
         path: '/',
@@ -61,7 +61,7 @@ let routes = [
         children: [
             {path: '/echarts', component: echarts, name: '购药业务'}
         ],
-        hidden: false,
+        hidden: true,
     },{
         path: '/404',
         component: NotFound,

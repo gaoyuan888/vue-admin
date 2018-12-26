@@ -6,20 +6,17 @@
             <el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
                 {{collapsed?'':sysName}}
             </el-col>
-            <el-col :span="3">
+            <el-col :span="10">
                 <div class="tools" @click.prevent="collapse">
                     <i class="fa fa-align-justify"></i>
                 </div>
             </el-col>
             <el-col :span="6">
-                <el-tabs type="border-card" @tab-click="tabClick">
-                    <el-tab-pane label="互医问诊" name="互医问诊">
-                        <!--<span slot="label"><i class="el-icon-date"></i> 我的行程</span>-->
-                        <!--我的行程-->
-                    </el-tab-pane>
+                <el-tabs  @tab-click="tabClick">
+                    <el-tab-pane label="互医问诊" name="互医问诊"></el-tab-pane>
+                    <el-tab-pane label="购药业务" name="购药业务"></el-tab-pane>
                     <el-tab-pane label="挂号平台" name="挂号平台"></el-tab-pane>
                     <el-tab-pane label="健康城市" name="健康城市"></el-tab-pane>
-                    <el-tab-pane label="购药业务" name="购药业务"></el-tab-pane>
                 </el-tabs>
             </el-col>
             <el-col :span="4" class="userinfo">
@@ -127,9 +124,8 @@
         methods: {
             tabClick(tab, event) {
                 let routes_ = showRoutes(tab.name);
+                routes_[0].hidden=false;
                 this.leftRoutes_ = routes_;
-                // 字符串
-
                 this.$router.push(routes_[0].children[0].path);
                 console.log(tab, event);
             },
@@ -190,8 +186,8 @@
         .header {
             height: 60px;
             line-height: 60px;
-            background: $color-primary;
-            color: #fff;
+            background: #48576a;;
+            color: #13ce66;
             .userinfo {
                 text-align: right;
                 padding-right: 35px;
@@ -313,5 +309,8 @@
 <style type="text/css">
     .el-tabs--border-card > .el-tabs__content {
         display: none;
+    }
+    .el-tabs__item{
+        color: #fbfdff;
     }
 </style>
