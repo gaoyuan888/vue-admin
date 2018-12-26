@@ -20,13 +20,6 @@ let routes = [
         hidden: true
     },
     {
-        path: '/404',
-        component: NotFound,
-        name: '',
-        hidden: true
-    },
-    //{ path: '/main', component: Main },
-    {
         path: '/',
         component: Home,
         name: '互医问诊',
@@ -70,6 +63,11 @@ let routes = [
             {path: '/echarts', component: echarts, name: '购药业务'}
         ],
         hidden: false,
+    },{
+        path: '/404',
+        component: NotFound,
+        name: '',
+        hidden: true
     },
     {
         path: '*',
