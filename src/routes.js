@@ -25,7 +25,6 @@ let routes = [
         name: '互医问诊',
         iconCls: 'el-icon-message',//图标样式class
         children: [
-            {path: '/main', component: Main, name: '主页', hidden: true},
             {path: '/table', component: Table, name: '患者列表'},
             {path: '/form', component: Form, name: '问诊信息'},
             {path: '/user', component: user, name: '医生列表'},

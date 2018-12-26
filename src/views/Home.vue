@@ -48,8 +48,8 @@
                                           v-if="!child.hidden">{{child.name}}
                             </el-menu-item>
                         </el-submenu>
-                        <el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path"><i
-                                :class="item.iconCls"></i>{{item.children[0].name}}
+                        <el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path">
+                            <i :class="item.iconCls"></i>{{item.children[0].name}}
                         </el-menu-item>
                     </template>
                 </el-menu>
@@ -128,6 +128,9 @@
             tabClick(tab, event) {
                 let routes_ = showRoutes(tab.name);
                 this.leftRoutes_ = routes_;
+                // 字符串
+
+                this.$router.push(routes_[0].children[0].path);
                 console.log(tab, event);
             },
             onSubmit() {
