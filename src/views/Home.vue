@@ -1,13 +1,26 @@
 <template>
+
 	<el-row class="container">
 		<el-col :span="24" class="header">
+
 			<el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
 				{{collapsed?'':sysName}}
 			</el-col>
-			<el-col :span="10">
+			<el-col :span="3">
 				<div class="tools" @click.prevent="collapse">
 					<i class="fa fa-align-justify"></i>
 				</div>
+			</el-col>
+			<el-col :span="6">
+				<el-tabs type="border-card" @tab-click="tabClick" >
+					<el-tab-pane label="互医问诊" name="互医问诊">
+						<!--<span slot="label"><i class="el-icon-date"></i> 我的行程</span>-->
+						<!--我的行程-->
+					</el-tab-pane>
+					<el-tab-pane label="挂号平台" name="挂号平台"></el-tab-pane>
+					<el-tab-pane label="健康城市" name="健康城市"></el-tab-pane>
+					<el-tab-pane label="购药业务" name="购药业务"></el-tab-pane>
+				</el-tabs>
 			</el-col>
 			<el-col :span="4" class="userinfo">
 				<el-dropdown trigger="hover">
@@ -22,6 +35,7 @@
 		</el-col>
 		<el-col :span="24" class="main">
 			<aside :class="collapsed?'menu-collapsed':'menu-expanded'">
+
 				<!--导航菜单-->
 				<el-menu :default-active="$route.path" class="el-menu-vertical-demo" @open="handleopen" @close="handleclose" @select="handleselect"
 					 unique-opened router v-show="!collapsed">
@@ -72,6 +86,7 @@
 </template>
 
 <script>
+    import {showRoutes} from '../routes';
 	export default {
 		data() {
 			return {
@@ -79,6 +94,7 @@
 				collapsed:false,
 				sysUserName: '',
 				sysUserAvatar: '',
+                activeName: 'second',
 				form: {
 					name: '',
 					region: '',
@@ -92,6 +108,11 @@
 			}
 		},
 		methods: {
+            tabClick(tab, event) {
+                let routes_ = showRoutes(tab.name);
+                $router.options.routes=routes_;
+                console.log(tab, event);
+            },
 			onSubmit() {
 				console.log('submit!');
 			},
@@ -140,7 +161,6 @@
 
 <style scoped lang="scss">
 	@import '~scss_vars';
-	
 	.container {
 		position: absolute;
 		top: 0px;
@@ -266,5 +286,11 @@
 				}
 			}
 		}
+	}
+
+</style>
+<style type="text/css">
+	.el-tabs--border-card>.el-tabs__content {
+		display: none;
 	}
 </style>
