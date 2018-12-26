@@ -18,14 +18,14 @@
 </template>
 
 <script>
-    import {requestLogin, requestClient} from '../api/api';
-    //import NProgress from 'nprogress'
+    import {requestLogin} from '../api/api';
+
     export default {
         data() {
             return {
                 logining: false,
                 ruleForm2: {
-                    account: 'admin',
+                    account: 'yaoyizhou1',
                     checkPass: '123456'
                 },
                 rules2: {
@@ -52,14 +52,12 @@
                         //_this.$router.replace('/table');
                         this.logining = true;
                         //NProgress.start();
-                        var ss = requestClient("");
-                        alert(ss);
                         var loginParams = {username: this.ruleForm2.account, password: this.ruleForm2.checkPass};
-                        requestLogin(loginParams).then(data => {
+                        requestLogin(loginParams).then(data_ => {
                             this.logining = false;
                             //NProgress.done();
-                            let {msg, code, user} = data;
-                            if (code !== 200) {
+                            let {code, msg,user} = data_;
+                            if (code!=200) {
                                 this.$message({
                                     message: msg,
                                     type: 'error'

@@ -2,10 +2,6 @@ import axios from 'axios';
 
 let base = '';
 
-export const requestClient = params => {
-    return axios.post(`${base}/client`, params).then(res => res.data);
-};
-
 export const requestLogin = params => {
     return axios.post(`${base}/login`, params).then(res => res.data);
 };

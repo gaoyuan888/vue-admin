@@ -29,7 +29,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: { // 反向代理
-        '/client': {
+        '/login': {
             target: 'http://127.0.0.1:8080',
             secure: false
         }
