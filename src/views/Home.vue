@@ -127,6 +127,15 @@
                 routes_[0].hidden=false;
                 this.leftRoutes_ = routes_;
                 this.$router.push(routes_[0].children[0].path);
+                //跳转到上次的页面
+                // this.$router.go(-1);
+
+                //跳转指定的页面
+                //this.$router.replace('/page6');
+
+                //跳转到指定名字下
+                // this.$router.replace({name:'健康城市'});
+
                 console.log(tab, event);
             },
             onSubmit() {
