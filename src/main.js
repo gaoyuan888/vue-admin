@@ -21,7 +21,8 @@ Vue.use(Vuex)
 //NProgress.configure({ showSpinner: false });
 
 const router = new VueRouter({
-  routes
+  routes,
+    mode:"history"
 })
 
 //权限管理
