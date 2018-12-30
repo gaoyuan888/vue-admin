@@ -121,12 +121,19 @@
                 }
             }
         },
+        //组件内的守卫
+        beforeRouteEnter:(to,from,next)=>{
+            // alert()
+            next(vm=>{
+                // alert('aaa'+vm.sysName);
+            })
+        },
         methods: {
             tabClick(tab, event) {
                 let routes_ = showRoutes(tab.name);
                 routes_[0].hidden=false;
                 this.leftRoutes_ = routes_;
-                this.$router.push(routes_[0].children[0].path);
+                // this.$router.push(routes_[0].children[0].path);
                 //跳转到上次的页面
                 // this.$router.go(-1);
 

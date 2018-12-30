@@ -25,7 +25,7 @@ const router = new VueRouter({
     mode:"history"
 })
 
-//权限管理
+//全局守卫
 router.beforeEach((to, from, next) => {
   //NProgress.start();
   if (to.path == '/login') {
@@ -39,6 +39,12 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+//后置钩子
+router.afterEach((to,from)=>{
+  // console.info();
+
+})
+
 
 new Vue({
   //el: '#app',

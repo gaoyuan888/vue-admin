@@ -24,6 +24,7 @@ let routes = [
         component: Home,
         name: '互医问诊',
         iconCls: 'el-icon-message',//图标样式class
+        redirect:"/table",
         children: [
             {path: '/table', component: Table, name: '患者列表'},
             {path: '/form', component: Form, name: '问诊信息'},
@@ -36,8 +37,18 @@ let routes = [
         component: Home,
         name: '挂号平台',
         iconCls: 'fa fa-id-card-o',
+        redirect:"/page4",//此处想设置默认页面，但是没有成功
+
         children: [
-            {path: '/page4', component: Page4, name: '页面4'},
+            {   path: '/page4',
+                component: Page4,
+                name: '页面4',
+                //路由独享守卫
+                // beforeEnter:(to,from,next)=>{
+                //     alert('aaa');
+                //     next();
+                // }
+            },
             {path: '/page5', component: Page5, name: '页面5'}
         ],
         hidden: true,
@@ -48,6 +59,7 @@ let routes = [
         name: '健康城市',
         iconCls: 'fa fa-address-card',
         leaf: true,//只有一个节点
+        redirect:"/page6",
         children: [
             {path: '/page6', component: Page6, name: '健康城市'}
         ],
@@ -58,6 +70,7 @@ let routes = [
         component: Home,
         name: '购药业务',
         iconCls: 'fa fa-bar-chart',
+        redirect:"/echarts",
         children: [
             {path: '/echarts', component: echarts, name: '购药业务'}
         ],
