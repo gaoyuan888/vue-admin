@@ -68,6 +68,7 @@ let routes = [
         name: '',
         hidden: true
     },
+    // 所有地址都没有匹配上，就走這個默认的路径
     {
         path: '*',
         hidden: true,
